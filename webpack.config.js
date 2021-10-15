@@ -3,6 +3,7 @@ require("regenerator-runtime/runtime");
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const devConfig = {
   mode: 'development',
@@ -31,7 +32,8 @@ const devConfig = {
       title: 'Webpack v5 Boilerplate',
       template: 'public/index.html',
       filename: 'index.html'
-    })
+    }),
+    new MiniCssExtractPlugin()
   ],
 
   // Loaders
@@ -46,10 +48,12 @@ const devConfig = {
         loader: 'handlebars-loader'
       },
       {
-        test: /\.css$/i,
+        test: /\.(s[ac]|c)ss$/i,
         use: [
-          "style-loader",
-          "css-loader"
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
         ],
       },
       {
