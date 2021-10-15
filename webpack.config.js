@@ -29,7 +29,7 @@ const devConfig = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Webpack v5 Boilerplate',
-      template: 'src/index.hbr',
+      template: 'public/index.html',
       filename: 'index.html'
     })
   ],
