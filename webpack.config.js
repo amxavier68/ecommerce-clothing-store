@@ -54,6 +54,7 @@ const devConfig = {
           "css-loader",
           "postcss-loader",
           "sass-loader"
+          
         ],
       },
       {
