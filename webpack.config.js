@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const devConfig = {
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
 
   // Entry/output
   entry: {
