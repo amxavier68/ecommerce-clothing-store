@@ -1,7 +1,6 @@
 const path = require('path');
 require("regenerator-runtime/runtime");
 
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -16,7 +15,8 @@ const devConfig = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+    clean: true
   },
 
   devServer: {
@@ -27,7 +27,6 @@ const devConfig = {
 
   // Plugins
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Webpack v5 Boilerplate',
       template: 'public/index.html',
