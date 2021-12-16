@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ErrorBoundary from '../utils/ErrorBoundary';
 import './App.css';
 
 import HomePage from './pages/homepage/homepage.component';
@@ -11,10 +10,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-out/sign-in-and-sign-u
 const App = () => {
   return (
     <div>
-      <ErrorBoundary>
-        <Header />
-      </ErrorBoundary>
-      
+      <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />

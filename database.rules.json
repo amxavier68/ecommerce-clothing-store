@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "crwn-clothing-5p1r1t",
+    "public": "public"
+  },
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
