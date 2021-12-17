@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react';
-import { auth } from './firebase.utils';
+import { auth, createUserProfileDocument } from './firebase.utils';
 
 const useGoogleUser = () => {
+  
   const [currentUser, setCurrentUser] = useState(null);
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(setCurrentUser);
-    return unsubscribe;
+    async function unscribeUser() {
+      createUserProfileDocument(currentUser);
+      console.log(currentUser);
+      const unsubscribe = await auth.onAuthStateChanged(setCurrentUser);
+      return unsubscribe;
+    }
+    unscribeUser();
   }, []);
+  
   return currentUser;
+
 }
 
 export default useGoogleUser;
